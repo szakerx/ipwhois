@@ -7,17 +7,12 @@ import { DialogErrorComponent } from './dialogs/dialog-error/dialog-error.compon
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
     title = 'frontend';
 
     constructor(public dialog: MatDialog) { }
 
-    ngOnInit() {
-        this.openErrorDialog();
-    }
-
-    private openErrorDialog() {
-        console.log('dialog opened');
+    public openErrorDialog() {
         const dialogRef = this.dialog.open(DialogErrorComponent, {
             data: {
                 errorCode: 400
@@ -26,7 +21,7 @@ export class AppComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe((tryAgain: boolean) => {
             if (tryAgain) {
-                // Send one more request to the server
+                // Resend request to the server
             }
         });
     }

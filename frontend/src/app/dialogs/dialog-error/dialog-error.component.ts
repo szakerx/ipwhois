@@ -14,7 +14,7 @@ export class DialogErrorComponent implements OnInit {
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: { errorCode: number },
-        private _translateService: TranslateService,
+        public translateService: TranslateService,
         private _dialogRef: MatDialogRef<DialogErrorComponent>
     ) {
         this._errorCode = data.errorCode;
@@ -42,11 +42,11 @@ export class DialogErrorComponent implements OnInit {
     }
 
     private getSupportedErrorMessage(errorCode: number): string {
-        return this._translateService.instant(`ERRORS.ERROR_${errorCode}_MESSAGE`);
+        return this.translateService.instant(`ERRORS.ERROR_${errorCode}_MESSAGE`);
     }
 
     private getUnsupportedErrorCodeMessage(): string {
-        return this._translateService.instant(`ERRORS.UNSUPPORTED_ERROR`);
+        return this.translateService.instant(`ERRORS.UNSUPPORTED_ERROR`);
     }
 
 }

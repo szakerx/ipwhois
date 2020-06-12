@@ -1,5 +1,12 @@
 {
-    "COMMON": {},
+    "COMMON": {
+        "BUTTONS": {
+            "OK": "Ok",
+            "RETRY": "Spróbuj ponownie",
+            "CANCEL": "Anuluj",
+            "CLOSE": "Zamknij"
+        }
+    },
     "ERRORS": {
         "ERROR_LABEL": "Wystąpił błąd",
         "ERROR_400_MESSAGE": "Zapytanie nie zostało poprawnie zinterpretowane przez serwer z powodu złej składni.",
