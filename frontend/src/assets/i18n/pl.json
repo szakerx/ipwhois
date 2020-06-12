@@ -1,0 +1,9 @@
+{
+    "COMMON": {},
+    "ERRORS": {
+        "ERROR_LABEL": "Wystąpił błąd",
+        "ERROR_400_MESSAGE": "Zapytanie nie zostało poprawnie zinterpretowane przez serwer z powodu złej składni.",
+        "ERROR_403_MESSAGE": "Dostęp zabroniony.",
+        "UNSUPPORTED_ERROR": "Błąd nie może zostać zinterpretowany."
+    }
+}
