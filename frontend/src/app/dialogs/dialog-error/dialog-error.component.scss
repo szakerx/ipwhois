@@ -1,0 +1,48 @@
+.error-header {
+    position: relative;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .icon {
+        position: relative;
+        z-index: 10;
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+    }
+}
+
+div[mat-dialog-content] {
+    p {
+        font-size: 1.2em;
+    }
+}
+
+.error-code {
+    position: absolute;
+    z-index: 0;
+    top: 100px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 250px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.04);
+    cursor: default;
+
+    &::selection {
+        background-color: transparent;
+        color: rgba(0,0,0,0.04);
+    }
+}

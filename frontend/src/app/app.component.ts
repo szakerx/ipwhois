@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogErrorComponent } from './dialogs/dialog-error/dialog-error.component';
 
@@ -12,6 +12,7 @@ export class AppComponent {
 
     constructor(public dialog: MatDialog) { }
 
+    // Just a way to test error dialog. 
     public openErrorDialog() {
         const dialogRef = this.dialog.open(DialogErrorComponent, {
             data: {
@@ -22,6 +23,7 @@ export class AppComponent {
         dialogRef.afterClosed().subscribe((tryAgain: boolean) => {
             if (tryAgain) {
                 // Resend request to the server
+                console.log('Resend request');
             }
         });
     }

@@ -10,7 +10,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogErrorComponent implements OnInit {
 
     private _errorCode: number;
-    supportedErrorCodes = [400, 401, 404, 408];
+    private _supportedErrorCodes = [400, 401, 404, 408];
+
+    get errorCode(): number {
+        return this._errorCode;
+    }
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: { errorCode: number },
@@ -26,7 +30,7 @@ export class DialogErrorComponent implements OnInit {
         let errorMessage: string;
         const errorCode = this._errorCode;
 
-        if (this.supportedErrorCodes.includes(errorCode)) {
+        if (this._supportedErrorCodes.includes(errorCode)) {
             try {
                 errorMessage = this.getSupportedErrorMessage(errorCode);
             }
@@ -49,4 +53,15 @@ export class DialogErrorComponent implements OnInit {
         return this.translateService.instant(`ERRORS.UNSUPPORTED_ERROR`);
     }
 
+    onCloseDialog() {
+        this.closeDialog(false);
+    }
+
+    onTryAgain() {
+        this.closeDialog(true);
+    }
+
+    private closeDialog(tryAgain: boolean) {
+        this._dialogRef.close(tryAgain);
+    }
 }

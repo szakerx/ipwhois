@@ -1,7 +1,17 @@
-<h1 mat-dialog-header>Error dialog</h1>
-<p mat-dialog-content>{{ getErrorMessage() }}</p>
-<button mat-button>{{ 'COMMON.BUTTONS.CLOSE' }}</button>
-<div mat-dialog-actions>
-    <button mat-button>{{ 'COMMON.BUTTONS.CLOSE' }}</button>
-    <button mat-raised-button>{{ 'COMMON.BUTTONS.RETRY'  }}</button>
+<div mat-dialog-header class="error-header">
+    <!-- <mat-icon color="warn">home</mat-icon> -->
+    <p class="error-code">{{ errorCode }}</p>
+    <div class="icon"></div>
+    <h1>Error dialog</h1>
+</div>
+
+<div mat-dialog-content>
+    <p>
+        {{ getErrorMessage() }}
+    </p>
+</div>
+
+<div mat-dialog-actions align="right">
+    <button mat-button (click)="onCloseDialog()">close</button>
+    <button mat-button color="primary" (click)="onTryAgain()">retry</button>
 </div>
