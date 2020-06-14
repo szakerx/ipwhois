@@ -15,7 +15,7 @@
     ```
 2. Run the frontend:
     ```
-    cd frontent
+    cd frontend
     npm install
     ng serve
     ```
