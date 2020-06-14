@@ -15,6 +15,8 @@
     ```
 2. Run the frontend:
     ```
-    angular command here
+    cd frontent
+    npm install
+    ng serve
     ```
-3. Go to `http://localhost:{ANGULAR_PORT}/`.
+3. Go to `http://localhost:8080/`.
