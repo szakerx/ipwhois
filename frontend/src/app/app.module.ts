@@ -19,6 +19,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
+        DialogErrorComponent
     ],
     imports: [
         BrowserModule,

@@ -46,3 +46,7 @@ div[mat-dialog-content] {
         color: rgba(0,0,0,0.04);
     }
 }
+
+.mat-dialog-actions {
+    justify-content: flex-end;
+}
