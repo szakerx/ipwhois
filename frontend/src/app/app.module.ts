@@ -11,6 +11,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DialogErrorComponent } from './dialogs/dialog-error/dialog-error.component';
+import { DialogInformationsComponent } from './dialogs/dialog-informations/dialog-informations.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
@@ -19,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
-        DialogErrorComponent
+        DialogErrorComponent,
+        DialogInformationsComponent
     ],
     imports: [
         BrowserModule,
@@ -39,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         })
     ],
     entryComponents: [
-        DialogErrorComponent
+        DialogErrorComponent,
+        DialogInformationsComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogErrorComponent } from './dialogs/dialog-error/dialog-error.component';
+import { DialogInformationsComponent } from './dialogs/dialog-informations/dialog-informations.component';
 
 @Component({
     selector: 'app-root',
@@ -19,6 +20,17 @@ export class AppComponent {
                 errorCode: 400
             }
         });
+
+        dialogRef.afterClosed().subscribe((tryAgain: boolean) => {
+            if (tryAgain) {
+                // Resend request to the server
+                console.log('Resend request');
+            }
+        });
+    }
+
+    public openInformationsDialog() {
+        const dialogRef = this.dialog.open(DialogInformationsComponent);
 
         dialogRef.afterClosed().subscribe((tryAgain: boolean) => {
             if (tryAgain) {
