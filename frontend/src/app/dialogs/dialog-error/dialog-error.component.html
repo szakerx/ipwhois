@@ -1,17 +1,17 @@
-<div mat-dialog-header class="error-header">
+<h1 mat-dialog-title class="error-header">
     <!-- <mat-icon color="warn">home</mat-icon> -->
     <p class="error-code">{{ errorCode }}</p>
     <div class="icon"></div>
     <h1>Error dialog</h1>
-</div>
+</h1>
 
-<div mat-dialog-content>
+<mat-dialog-content>
     <p>
         {{ getErrorMessage() }}
     </p>
-</div>
+</mat-dialog-content>
 
-<div mat-dialog-actions align="right">
-    <button mat-button (click)="onCloseDialog()">close</button>
-    <button mat-button color="primary" (click)="onTryAgain()">retry</button>
-</div>
+<mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseDialog()">close</button>
+    <button mat-raised-button color="accent" (click)="onTryAgain()">retry</button>
+</mat-dialog-actions>
