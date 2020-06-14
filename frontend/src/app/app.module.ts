@@ -12,7 +12,10 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DialogErrorComponent } from './dialogs/dialog-error/dialog-error.component';
 import { DialogInformationsComponent } from './dialogs/dialog-informations/dialog-informations.component';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule, MatInput} from '@angular/material/input';
+import { FindServerFieldComponent } from './find-server-field/find-server-field.component';
+import { ReactiveFormsModule } from '@angular/forms';
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
@@ -21,7 +24,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [
         AppComponent,
         DialogErrorComponent,
-        DialogInformationsComponent
+        DialogInformationsComponent,
+        FindServerFieldComponent
     ],
     imports: [
         BrowserModule,
@@ -31,6 +35,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatButtonModule,
         MatIconModule,
         HttpClientModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
