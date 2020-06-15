@@ -1,0 +1,23 @@
+<div class="find-server-container">
+  <h1>
+    Check details about server
+  </h1>
+  <div class="find-server-field-container">
+    <mat-form-field class="find-server-form-field" [floatLabel]="'always'">
+      <mat-label>IP address</mat-label>
+      <input matInput type="text" placeholder="Enter IP address" [formControl]="addressFormControl">
+      <button mat-button *ngIf="addressFormControl.value" matSuffix mat-icon-button aria-label="Clear"
+        (click)="addressFormControl.reset()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-error *ngIf="addressFormControl.hasError('required')">IP address is required</mat-error>
+      <mat-error *ngIf="addressFormControl.hasError('pattern')">IP address is not valid</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="find-server-button-container">
+    <button mat-raised-button color="accent" [disabled]="!addressFormControl.valid" (click)="onCheckServer()">check</button>
+  </div>
+
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "cube-transition" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+  
+</div>
