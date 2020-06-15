@@ -1,10 +1,10 @@
 import Router from "express";
 
-import handler from "./information/handler.js";
+import handler from "./details/handler.js";
 
 const routes = Router();
 
-routes.get("/information/:ip", handler.getInformation);
+routes.get("/details/:ip", handler.getInformation);
 
 
 export default routes;
