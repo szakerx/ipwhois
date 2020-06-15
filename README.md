@@ -11,7 +11,7 @@
     ```
     cd backend
     npm install
-    node index.js
+    node index.js --experimental-modules
     ```
 2. Run the frontend:
     ```

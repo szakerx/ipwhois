@@ -1,7 +1,10 @@
-const express = require('express')
-const app = express()
-const port = 2115
+import express from "express";
+import routes from "./src/api/routes.js";
 
-app.get('/', (req, res) => res.send('Henlo fren'))
+const port = 2115;
+
+const app = express();
+
+app.use(routes);
 
 app.listen(port, () => console.log(`App started at port: ${port}`))
